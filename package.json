@@ -1,0 +1,26 @@
+{
+  "name": "eriko-scroller.js",
+  "version": "1.0.0",
+  "description": "A lib to handle events triggered by scrolling",
+  "main": "eriko-scroller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "utils/*",
+    "*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreddyCro/eriko-scroller.js.git"
+  },
+  "keywords": [
+    "scroll"
+  ],
+  "author": "FreddyCro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FreddyCro/eriko-scroller.js/issues"
+  },
+  "homepage": "https://github.com/FreddyCro/eriko-scroller.js#readme"
+}
