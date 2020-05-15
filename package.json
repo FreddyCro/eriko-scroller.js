@@ -4,6 +4,7 @@
   "description": "A lib to handle events triggered by scrolling",
   "main": "eriko-scroller.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -22,5 +23,16 @@
   "bugs": {
     "url": "https://github.com/FreddyCro/eriko-scroller.js/issues"
   },
-  "homepage": "https://github.com/FreddyCro/eriko-scroller.js#readme"
+  "homepage": "https://github.com/FreddyCro/eriko-scroller.js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
