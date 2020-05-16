@@ -37,9 +37,10 @@ module.exports = {
     new CleanWebpackPlugin({ dry: true, protectWebpackAssets: false }),
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin({
+    minimizer: [new UglifyJsPlugin(
+      {
         uglifyOptions: {
-          keep_fnames: true
+          keep_fnames: true,
         }
       }
     )]
