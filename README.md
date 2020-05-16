@@ -19,6 +19,9 @@ import '[path]]/eriko-scroller.js';
 // target element
 var es = new window.ErikoScroller()
 es.addObservableScrollEvent([target id], [option], [debugger]);
+
+// remove listener
+es.removeObservableScrollEvent([target id], [option], [debugger]);
 ```
 
 ## Parameter
