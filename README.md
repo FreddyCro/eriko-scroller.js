@@ -47,7 +47,7 @@ name | type | optional | default
 `option` | `object` | no |
 `debugger` | `boolean` | yes | `false`
 
-#### `option` document
+#### `option`
 
 name | type | optional | default | options
 --- | --- | --- | --- | ---
@@ -59,6 +59,6 @@ name | type | optional | default | options
 `aboveEvent` | `function` | yes | `null`
 `underEvent` | `function` | yes | `null`
 
-`type`:
-`'w'`: [screen mode] - window.innerHeight
-`'p'`: [pixel mode] - pixel
+`type`:  
+`'w'`: [screen mode] - window.innerHeight  
+`'p'`: [pixel mode] - pixel  
