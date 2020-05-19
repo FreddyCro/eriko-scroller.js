@@ -1,8 +1,8 @@
 # 【eriko-scroller.js】
 
 ```text=
-version: v1.0.1
-last updated: 2020.5.16
+version: v1.0.2
+last updated: 2020.5.19
 ```
 
 ## Availability

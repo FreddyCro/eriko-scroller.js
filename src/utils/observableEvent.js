@@ -148,9 +148,9 @@ export default function(target, option, debugMode) {
     if (option.enterEvent) option.enterEvent();
     else console.error('OberservableEvent: lack of enterEvent parameter!');
   }
-  // leave
-  else if (option.leaveEvent) {
-    option.leaveEvent();
+  else  {
+    // leave
+    if (option.leaveEvent) option.leaveEvent();
     // above
     if (option.aboveEvent && pos.top >= finalTop) option.aboveEvent();
     // under
