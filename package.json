@@ -1,14 +1,15 @@
 {
   "name": "eriko-scroller.js",
-  "version": "1.0.3",
-  "description": "A lib to handle events triggered by scrolling",
-  "main": "eriko-scroller.js",
+  "version": "1.0.6",
+  "description": "A library to handle events triggered by scrolling",
+  "main": "dist/eriko-scroller.min.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "utils/*",
+    "dist/*",
+    "*.json",
     "*.js"
   ],
   "repository": {
