@@ -1,8 +1,8 @@
 # 【eriko-scroller.js】
 
 ```text=
-version: v1.0.2
-last updated: 2020.5.19
+version: v1.0.3
+last updated: 2020.5.21
 ```
 
 ## Availability
@@ -14,10 +14,10 @@ npm install --save eriko-scroller.js
 ## Usage
 
 ```javascript=
-import '[path]]/eriko-scroller.js';
+import {ErikoScroller } '[path]]/eriko-scroller.js';
 
 // target element
-var es = new window.ErikoScroller();
+var es = new ErikoScroller();
 es.addObservableScrollEvent([target id], [option], [debugger]);
 
 // remove listener

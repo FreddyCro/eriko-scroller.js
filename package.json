@@ -1,6 +1,6 @@
 {
   "name": "eriko-scroller.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lib to handle events triggered by scrolling",
   "main": "eriko-scroller.js",
   "scripts": {

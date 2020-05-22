@@ -13,7 +13,6 @@
  * @property {underEvent} method: default: null
  */
 
-
 const typePixel = 'p';
 const typeWindowHeight = 'w';
 const targetStyle = {
