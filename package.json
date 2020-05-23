@@ -1,6 +1,6 @@
 {
   "name": "eriko-scroller.js",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "A library to handle events triggered by scrolling",
   "main": "dist/eriko-scroller.min.js",
   "scripts": {
@@ -8,9 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "dist/*",
-    "*.json",
-    "*.js"
+    "dist/eriko-scroller.min.js",
+    "package.json"
   ],
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 # 【eriko-scroller.js】
 
 ```text=
-version: v1.0.6
+version: v1.0.8
 last updated: 2020.5.21
 ```
 
@@ -14,7 +14,7 @@ npm install --save eriko-scroller.js
 ## Usage
 
 ```javascript=
-import {ErikoScroller } 'eriko-scroller.js';
+import {ErikoScroller } from 'eriko-scroller.js';
 
 // target element
 var es = new ErikoScroller();
