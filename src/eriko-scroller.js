@@ -66,7 +66,7 @@ class ErikoScroller {
     document.removeEventListener(
       "scroll",
       () => this.handleScroll(() => observableEvent(...params, debugMode)),
-      true
+      { passive: true }
     );
   }
 }
