@@ -14,7 +14,7 @@ npm install --save eriko-scroller.js
 ## Usage
 
 ```javascript=
-import {ErikoScroller } from 'eriko-scroller.js';
+import { ErikoScroller } from 'eriko-scroller.js';
 
 // target element
 var es = new ErikoScroller();
