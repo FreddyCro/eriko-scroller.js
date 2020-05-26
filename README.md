@@ -1,8 +1,8 @@
 # 【eriko-scroller.js】
 
 ```text=
-version: v1.0.8
-last updated: 2020.5.21
+version: v1.0.9
+last updated: 2020.5.26
 ```
 
 ## Availability
@@ -21,7 +21,7 @@ var es = new ErikoScroller();
 es.addObservableScrollEvent([target id], [option], [debugger]);
 
 // remove listener
-es.removeObservableScrollEvent([target id], [option], [debugger]);
+es.removeObservableScrollEvent();
 ```
 
 ## Parameter

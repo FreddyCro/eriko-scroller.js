@@ -1,40 +1,53 @@
 /**
  * Common scroll event methods.
  */
-import observableEvent from "@/utils/observableEvent.js";
+import observableEvent from "./utils/observableEvent.js";
+
+let ticking = false;
 
 class ErikoScroller {
   constructor() {
-    this.ticking = false;
+    this.target = null;
+    this.option = null;
+    this.debugMode = false;
+    this.executeEvent = null;
   }
 
   handleScroll(customEvent) {
-    if (!this.ticking) {
+    if (!ticking) {
       window.requestAnimationFrame(() => {
         customEvent();
-        this.ticking = false;
+        ticking = false;
       });
     }
-    this.ticking = true;
+    ticking = true;
   }
 
-  addScrollEvent(customEvent) {
-    document.addEventListener(
-      "scroll",
-      () => this.handleScroll(customEvent),
-      true
-    );
+  addScrollEvent(customEvent = null) {
+    if (!customEvent) {
+      console.error('Scroll event cannot be empty.');
+      return;
+    }
+
+    this.executeEvent = () => this.handleScroll(customEvent);
+    document.addEventListener("scroll", this.executeEvent, true);
   }
 
-  removeScrollEvent(customEvent) {
-    document.removeEventListener(
-      "scroll",
-      () => this.handleScroll(customEvent),
-      true
-    );
+  removeScrollEvent() {
+    if (!this.customEvent) {
+      console.error('Scroll event cannot be empty.');
+      return;
+    }
+    
+    document.removeEventListener("scroll", this.executeEvent, true);
   }
 
   addObservableScrollEvent(target, option = null, debugMode = false) {
+    if (!target) {
+      console.error('Target cannot be empty.');
+      return;
+    }
+
     const customOption = {
       type: option.type || "w",
       top: option.top || 0,
@@ -44,30 +57,19 @@ class ErikoScroller {
       aboveEvent: option.aboveEvent || null,
       underEvent: option.underEvent || null,
     };
-    const params = [target, customOption];
-    document.addEventListener(
-      "scroll",
-      () => this.handleScroll(() => observableEvent(...params, debugMode)),
-      true
-    );
+
+    this.target = target;
+    this.option = customOption;
+    this.debugMode = debugMode;
+    this.executeEvent = () => this.handleScroll(() => observableEvent(...params, this.debugMode));
+
+    const params = [this.target, this.option];
+
+    document.addEventListener("scroll", this.executeEvent, true);
   }
 
-  removeObservableScrollEvent(target, option = null, debugMode = false) {
-    const customOption = {
-      type: option.type || "w",
-      top: option.top || 0,
-      bottom: option.bottom || 0,
-      enterEvent: option.enterEvent || null,
-      leaveEvent: option.leaveEvent || null,
-      aboveEvent: option.aboveEvent || null,
-      underEvent: option.underEvent || null,
-    };
-    const params = [target, customOption];
-    document.removeEventListener(
-      "scroll",
-      () => this.handleScroll(() => observableEvent(...params, debugMode)),
-      { passive: true }
-    );
+  removeObservableScrollEvent() {
+    document.removeEventListener("scroll", this.executeEvent, true);
   }
 }
 
