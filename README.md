@@ -1,7 +1,7 @@
 # 【eriko-scroller.js】
 
 ```text=
-version: v1.0.10
+version: v1.0.11
 last updated: 2020.5.26
 ```
 

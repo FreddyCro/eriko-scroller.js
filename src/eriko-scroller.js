@@ -1,12 +1,11 @@
 /**
  * Common scroll event methods.
  */
-import observableEvent from "./utils/observableEvent.js";
-
-let ticking = false;
+import observableEvent from './utils/observableEvent.js';
 
 class ErikoScroller {
   constructor() {
+    this.ticking = false;
     this.target = null;
     this.option = null;
     this.debugMode = false;
@@ -14,13 +13,13 @@ class ErikoScroller {
   }
 
   handleScroll(customEvent) {
-    if (!ticking) {
+    if (!this.ticking) {
       window.requestAnimationFrame(() => {
         customEvent();
-        ticking = false;
+        this.ticking = false;
       });
     }
-    ticking = true;
+    this.ticking = true;
   }
 
   addScrollEvent(customEvent = null) {
@@ -30,7 +29,7 @@ class ErikoScroller {
     }
 
     this.executeEvent = () => this.handleScroll(customEvent);
-    document.addEventListener("scroll", this.executeEvent, true);
+    document.addEventListener('scroll', this.executeEvent, true);
   }
 
   removeScrollEvent() {
@@ -39,7 +38,7 @@ class ErikoScroller {
       return;
     }
     
-    document.removeEventListener("scroll", this.executeEvent, true);
+    document.removeEventListener('scroll', this.executeEvent, true);
   }
 
   addObservableScrollEvent(target, option = null, debugMode = false) {
@@ -49,7 +48,7 @@ class ErikoScroller {
     }
 
     const customOption = {
-      type: option.type || "w",
+      type: option.type || 'w',
       top: option.top || 0,
       bottom: option.bottom || 0,
       enterEvent: option.enterEvent || null,
@@ -61,15 +60,16 @@ class ErikoScroller {
     this.target = target;
     this.option = customOption;
     this.debugMode = debugMode;
+
     this.executeEvent = () => this.handleScroll(() => observableEvent(...params, this.debugMode));
 
     const params = [this.target, this.option];
 
-    document.addEventListener("scroll", this.executeEvent, true);
+    document.addEventListener('scroll', this.executeEvent, true);
   }
 
   removeObservableScrollEvent() {
-    document.removeEventListener("scroll", this.executeEvent, true);
+    document.removeEventListener('scroll', this.executeEvent, true);
   }
 }
 
